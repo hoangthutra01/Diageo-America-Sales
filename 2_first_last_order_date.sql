@@ -1,5 +1,4 @@
-with diageo_america_store as
-(select
+select
   store_number 
   , store_name 
   , date_trunc(min (order_date), month) as first_order_date
@@ -9,7 +8,3 @@ where
   vendor_number =260
 group by 1, 2
 order by 1,2
-)
-
-select *
-from diageo_america_store
